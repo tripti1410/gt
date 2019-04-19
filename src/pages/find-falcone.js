@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import Select from "../components/select/select";
 import Button from "../components/button/button";
 import RadioButton from "../components/radio-button/radio-button";
-import { listAllPlanets } from "../action-creators";
+import { listAllPlanets, listAllVehicles } from "../async-action-creators";
 
 class FindFalcone extends React.Component {
   componentDidMount() {

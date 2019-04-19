@@ -3,6 +3,8 @@ import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
 import FindFalcone from "./pages/find-falcone";
 import store from "./store";
+import ErrorBoundaries from "./components/error-boundary";
+
 import "./app.css";
 
 class App extends React.Component {
@@ -15,7 +17,9 @@ class App extends React.Component {
           <a href="#">GeekTrustHome</a>
         </header>
         <main className="container">
-          <FindFalcone />
+          <ErrorBoundaries>
+            <FindFalcone />
+          </ErrorBoundaries>
         </main>
       </div>
     );
