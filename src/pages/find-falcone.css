@@ -1,0 +1,25 @@
+.destination-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.finding-falcone {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  align-items: start;
+  justify-content: center;
+  padding: 24px;
+  background-color: white;
+}
+
+.finding-falcone__title {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.find-falcon-button {
+  justify-self: center;
+  grid-column: 3/4;
+}

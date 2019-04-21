@@ -1,6 +1,10 @@
 const INITIAL_STATE = {
   allVehicles: [],
-  allPlanets: []
-}
+  allPlanets: [],
+  app: {
+    selectedPlanets: {},
+    selectedVehicles: []
+  }
+};
 
 export default INITIAL_STATE;

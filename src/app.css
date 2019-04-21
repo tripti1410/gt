@@ -7,17 +7,3 @@ body {
   margin: auto;
 }
 
-.finding-falcone {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background-color: white;
-}
-
-.finding-falcone__title {
-  grid-column: 1/-1;
-  text-align: center;
-}

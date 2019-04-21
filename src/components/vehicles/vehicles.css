@@ -1,0 +1,8 @@
+.vehicles-container {
+  margin: 16px 0;
+}
+
+.vehicles-container__vehicle {
+  display: flex;
+  margin-bottom: 8px;
+}

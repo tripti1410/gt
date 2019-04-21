@@ -1,14 +1,13 @@
 import React from "react";
 import ReactSelect from "react-select";
 
-const Select = ({ label, options, value, onChange }) => {
+const Select = ({ id, label, ...rest }) => {
   return (
     <div>
-      <label>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <ReactSelect
-        options={options}
-        value={value}
-        onChange={value => onChange(value)}
+        id={id}
+        {...rest}
       />
     </div>
   );
