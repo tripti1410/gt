@@ -25,8 +25,8 @@ export const setSelectedPlanet = (destination, planet) => ({
   type: actions.SET_SELECTED_PLANET, payload: { destination, planet }
 })
 
-export const onChangeOfVehicle = (vehicleName) => ({
-  type: actions.SET_SELECTED_VEHICLE, payload: { vehicleName }
+export const onChangeOfVehicle = (destinationName, vehicleName) => ({
+  type: actions.SET_SELECTED_VEHICLE, payload: { destinationName, vehicleName }
 })
 
 

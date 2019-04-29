@@ -1,0 +1,4 @@
+.vehicles-container__vehicle.is-disabled {
+  color: gray;
+  cursor: not-allowed;
+}
