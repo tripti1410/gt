@@ -24,7 +24,8 @@ const INITIAL_STATE = {
     selectedVehicles: {}
   },
   ui: {
-    uniquePlanets: []
+    uniquePlanets: [],
+    totalTimeTravelled: 0
   }
 };
 

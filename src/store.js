@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import findingFalcone from "./reducer";
+import findingFalconeReducer from "./reducer";
 
 import { composeWithDevTools } from "redux-devtools-extension";
-const store = createStore(findingFalcone, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(findingFalconeReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store; 

@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Button from "../components/button/button";
-import { listAllPlanets, listAllVehicles } from "../async-action-creators";
-import { setSelectedPlanet, onChangeOfVehicle } from "../action-creators";
-import Time from "../components/time/time";
-import Destination from "../components/destination/destination";
+import Button from "../../components/button/button";
+import { listAllPlanets, listAllVehicles } from "../../async-action-creators";
+import { setSelectedPlanet, onChangeOfVehicle } from "../../action-creators";
+import Time from "../../components/time/time";
+import Destination from "../../components/destination/destination";
 
 import "./find-falcone.css";
 class FindFalcone extends React.Component {
@@ -22,7 +22,8 @@ class FindFalcone extends React.Component {
       selectedVehicles,
       onChangeOfVehicle,
       availableVehicles,
-      destinations
+      destinations,
+      totalTimeTravelled
     } = this.props;
     return (
       <div className="finding-falcone">
@@ -41,7 +42,7 @@ class FindFalcone extends React.Component {
             allVehicles={allVehicles}
           />
         ))}
-        <Time />
+        <Time totalTimeTravelled={totalTimeTravelled} />
         <div className="find-falcon-button">
           <Button>Find Falcone!</Button>
         </div>
@@ -56,7 +57,8 @@ const mapStateToProps = state => {
     allVehicles: state.allVehicles,
     selectedPlanets: state.app.selectedPlanets,
     selectedVehicles: state.app.selectedVehicles,
-    destinations: state.destinations
+    destinations: state.destinations,
+    totalTimeTravelled: state.ui.totalTimeTravelled
   };
 };
 
@@ -64,10 +66,10 @@ const mapDispatchToProps = dispatch => {
   return {
     listAllPlanets: () => dispatch(listAllPlanets()),
     listAllVehicles: () => dispatch(listAllVehicles()),
-    onPlanetChange: (destination, planet) =>
-      dispatch(setSelectedPlanet(destination, planet)),
-    onChangeOfVehicle: (destinationName, vehicleName) =>
-      dispatch(onChangeOfVehicle(destinationName, vehicleName))
+    onPlanetChange: (destinationName, planet) =>
+      dispatch(setSelectedPlanet(destinationName, planet)),
+    onChangeOfVehicle: (destinationName, vehicle) =>
+      dispatch(onChangeOfVehicle(destinationName, vehicle))
   };
 };
 

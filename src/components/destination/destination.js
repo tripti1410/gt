@@ -45,7 +45,7 @@ const Destination = ({
                 id={`${destination.value}-${vehicle.name}`}
                 name={destination.value}
                 onChange={value =>
-                  onChangeOfVehicle(destination.value, vehicle.name)
+                  onChangeOfVehicle(destination.value, vehicle)
                 }
               />
             </div>

@@ -21,12 +21,12 @@ export const fetchVehiclesFailureAction = (error) => ({
   type: actions.FETCH_VEHICLES_FAILURE, payload: { error }
 });
 
-export const setSelectedPlanet = (destination, planet) => ({
-  type: actions.SET_SELECTED_PLANET, payload: { destination, planet }
+export const setSelectedPlanet = (destinationName, planet) => ({
+  type: actions.SET_SELECTED_PLANET, payload: { destinationName, planet }
 })
 
-export const onChangeOfVehicle = (destinationName, vehicleName) => ({
-  type: actions.SET_SELECTED_VEHICLE, payload: { destinationName, vehicleName }
+export const onChangeOfVehicle = (destinationName, vehicle) => ({
+  type: actions.SET_SELECTED_VEHICLE, payload: { destinationName, vehicle }
 })
 
 

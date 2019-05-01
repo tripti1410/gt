@@ -1,9 +1,8 @@
-import { differenceBy } from "lodash";
-
 import INITIAL_STATE from "./state";
 import * as actions from "./actions";
+import { getTotalTimeTravelled, getUniquePlanets } from "./pages/utils";
 
-function findingFalcone(state = INITIAL_STATE, action) {
+function findingFalconeReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case actions.FETCH_PLANETS_SUCCESS:
       return {
@@ -28,12 +27,15 @@ function findingFalcone(state = INITIAL_STATE, action) {
           ...state.app,
           selectedPlanets: {
             ...state.app.selectedPlanets,
-            [action.payload.destination]: action.payload.planet
+            [action.payload.destinationName]: action.payload.planet
           }
         },
         ui: {
           ...state.ui,
-          uniquePlanets: differenceBy( [...state.allPlanets], [...Object.values(state.app.selectedPlanets), action.payload.planet], "name" )
+          uniquePlanets: getUniquePlanets(state.allPlanets, [
+            ...Object.values(state.app.selectedPlanets),
+            action.payload.planet
+          ])
         }
       };
     case actions.SET_SELECTED_VEHICLE:
@@ -43,8 +45,16 @@ function findingFalcone(state = INITIAL_STATE, action) {
           ...state.app,
           selectedVehicles: {
             ...state.app.selectedVehicles,
-            [action.payload.destinationName]: action.payload.vehicleName
+            [action.payload.destinationName]: action.payload.vehicle.name
           }
+        },
+        ui: {
+          ...state.ui,
+          totalTimeTravelled: getTotalTimeTravelled(
+            state.ui.totalTimeTravelled,
+            state.app.selectedPlanets[action.payload.destinationName],
+            action.payload.vehicle
+          )
         }
       };
     default:
@@ -53,4 +63,4 @@ function findingFalcone(state = INITIAL_STATE, action) {
   }
 }
 
-export default findingFalcone;
+export default findingFalconeReducer;

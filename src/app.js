@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
-import FindFalcone from "./pages/find-falcone";
+import FindFalcone from "./pages/find-falcone/find-falcone";
 import store from "./store";
 import ErrorBoundaries from "./components/error-boundary";
 
