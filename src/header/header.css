@@ -1,0 +1,17 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem;
+}
+
+.main-header__title {
+  color: var(--white);
+}
+
+.main-header__link:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.main-header__links a {
+  color: var(--white);
+}

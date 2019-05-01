@@ -1,0 +1,32 @@
+.planets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.planet {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.planets .donlon {
+  background: linear-gradient(to top,  #dfa23a, #f1ce9e, #dfa23a, #f1ce9e, #dfa23a, #dfa23a)
+}
+
+.planets .enchai {
+  background: radial-gradient(ellipse,  #ba6850, #a01c17, #ba6850)
+}
+
+.planets .jebing {
+  background: radial-gradient(ellipse,  #0a5a94, #269ebb)
+}
+
+.planets .sapir {
+  background: radial-gradient(circle at top left,  #a01c17, #ba6850)
+}
+.planets .lerbin {
+  background: radial-gradient(circle at top right,  #da9831, #da6a31, #ba8332, #da7b31, #fed41d)
+}
+.planets .pangasor {
+  background: linear-gradient(to right,  #30c9e8, #9ce5f4, #30c9e8, #9ce5f4, #30c9e8)
+}
