@@ -1,11 +1,11 @@
 import React from "react";
+import Clock from "../icons/clock";
 import "./time.css";
 
 const Time = ({totalTimeTravelled}) => {
   return (
     <div className="time-container">
-      <span>Time taken: </span>
-      <time>{totalTimeTravelled}</time>
+      <time>{totalTimeTravelled === 0 ? <Clock /> : totalTimeTravelled}</time>
     </div>
   );
 };

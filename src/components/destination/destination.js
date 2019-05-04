@@ -44,6 +44,12 @@ const Destination = ({
                 label={vehicle.name}
                 id={`${destination.value}-${vehicle.name}`}
                 name={destination.value}
+                disabled={isPotentialVehicle(
+                  selectedVehicles,
+                  vehicle,
+                  destination.value,
+                  selectedPlanets[destination.value]
+                )}
                 onChange={value =>
                   onChangeOfVehicle(destination.value, vehicle)
                 }

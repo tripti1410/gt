@@ -1,0 +1,5 @@
+.field-label {
+  font-size: var(--fs-s);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}

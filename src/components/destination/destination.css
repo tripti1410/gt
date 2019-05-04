@@ -1,4 +1,8 @@
 .vehicles-container__vehicle.is-disabled {
-  color: gray;
+  color: var(--mono-4);
   cursor: not-allowed;
+}
+
+.vehicles-container {
+  margin-top: 0.8rem;
 }

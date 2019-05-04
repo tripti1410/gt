@@ -26,8 +26,9 @@ class FindFalcone extends React.Component {
       totalTimeTravelled
     } = this.props;
     return (
-      <div className="finding-falcone">
+      <div className="finding-falcone"> 
         <h2 className="finding-falcone__title">
+        <Time totalTimeTravelled={totalTimeTravelled} />
           Select Planets you want to search in:
         </h2>
         {destinations.map((destination, index) => (
@@ -42,9 +43,8 @@ class FindFalcone extends React.Component {
             allVehicles={allVehicles}
           />
         ))}
-        <Time totalTimeTravelled={totalTimeTravelled} />
         <div className="find-falcon-button">
-          <Button>Find Falcone!</Button>
+          <Button primary >Find Falcone!</Button>
         </div>
       </div>
     );

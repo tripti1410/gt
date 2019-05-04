@@ -1,14 +1,18 @@
 .destination-container {
   display: grid;
-  margin-bottom: 2.4rem;
-  grid-row-gap: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
 .finding-falcone {
   padding: 1.6rem;
-  background-color: var(--white);
 }
 
 .finding-falcone__title {
-  text-align: center;
+  margin: 0 0 2.4rem 0;
+  font-size: var(--fs-l);
+  font-weight: var(--fw-medium);
+  text-align: left;
+  line-height: var(--lh-2);
+  letter-spacing: 0.5px;
+  color: var(--mono-1);
 }

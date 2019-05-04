@@ -1,15 +1,18 @@
 import React from "react";
+import FieldLabel from "../label/label";
+import "./radio-button.css";
 
-const RadioButton = ({ label, name, id, onChange }) => {
+const RadioButton = ({ label, name, id, onChange, disabled }) => {
   return (
-    <div>
+    <div className="radio-button-container">
       <input
         id={id}
         type="radio"
         name={name}
+        disabled={disabled}
         onChange={e => onChange(e.target.checked)}
       />
-      <label htmlFor={id}>{label}</label>
+      <FieldLabel id={id} label={label}></FieldLabel>
     </div>
   );
 };
