@@ -1,4 +1,5 @@
-import { getPlanets, getVehicles } from "./api";
+import {map} from "lodash";
+import { getPlanets, getVehicles, getToken, findfalcone } from "./api";
 import {
   fetchPlanetsRequestAction,
   fetchPlanetsSuccessAction,
@@ -27,3 +28,20 @@ export const listAllVehicles = () => async (dispatch) => {
     dispatch(fetchVehiclesFailureAction(error));
   }
 };
+
+export const findFalcone = () => async (dispatch, getState) => {
+  const planets =  map(Object.values(getState().app.selectedPlanets), planet => planet.name)
+  const vehicles =  Object.values(getState().app.selectedVehicles);
+  try {
+    const response = await getToken();
+    const falconeResponse = await findfalcone({token: response.token,'planet_names': planets, 'vehicle_names': vehicles}); 
+    if(falconeResponse.status) {
+      dispatch(findFalconeSuccessFound(falconeResponse["planet_name"]))
+    } else {
+      dispatch(findFalconeSuccessNotFound())
+    }
+    
+  } catch (e) {
+    // dispatch(findFalconeFailure(e.error));
+  }
+}

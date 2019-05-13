@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Button from "../../components/button/button";
-import { listAllPlanets, listAllVehicles } from "../../async-action-creators";
+import { listAllPlanets, listAllVehicles, findFalcone } from "../../async-action-creators";
 import { setSelectedPlanet, onChangeOfVehicle } from "../../action-creators";
 import Time from "../../components/time/time";
 import Destination from "../../components/destination/destination";
@@ -23,7 +23,8 @@ class FindFalcone extends React.Component {
       onChangeOfVehicle,
       availableVehicles,
       destinations,
-      totalTimeTravelled
+      totalTimeTravelled,
+      onClickFindFalcone
     } = this.props;
     return (
       <div className="finding-falcone"> 
@@ -44,7 +45,7 @@ class FindFalcone extends React.Component {
           />
         ))}
         <div className="find-falcon-button">
-          <Button primary >Find Falcone!</Button>
+          <Button primary onClick={() => onClickFindFalcone()}>Find Falcone!</Button>
         </div>
       </div>
     );
@@ -69,7 +70,8 @@ const mapDispatchToProps = dispatch => {
     onPlanetChange: (destinationName, planet) =>
       dispatch(setSelectedPlanet(destinationName, planet)),
     onChangeOfVehicle: (destinationName, vehicle) =>
-      dispatch(onChangeOfVehicle(destinationName, vehicle))
+      dispatch(onChangeOfVehicle(destinationName, vehicle)),
+    onClickFindFalcone: () => dispatch(findFalcone())
   };
 };
 

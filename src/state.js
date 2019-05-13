@@ -25,7 +25,8 @@ const INITIAL_STATE = {
   },
   ui: {
     uniquePlanets: [],
-    totalTimeTravelled: 0
+    totalTimeTravelled: 0,
+    successDestination: ''
   }
 };
 

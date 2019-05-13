@@ -29,5 +29,13 @@ export const onChangeOfVehicle = (destinationName, vehicle) => ({
   type: actions.SET_SELECTED_VEHICLE, payload: { destinationName, vehicle }
 })
 
+export const findFalconeSuccessFound = (planetName) => ({
+  type: actions.FIND_FALCONE_SUCCESS_FOUND, payload: { planetName }
+})
+
+export const findFalconeSuccessNotFound = () => ({
+  type: actions.FIND_FALCONE_SUCCESS_NOT_FOUND
+})
+
 
 

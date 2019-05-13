@@ -57,6 +57,14 @@ function findingFalconeReducer(state = INITIAL_STATE, action) {
           )
         }
       };
+    case actions.FIND_FALCONE_SUCCESS_FOUND:
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          successDestination: action.payload.planet
+        }
+      }
     default:
       return state;
       break;

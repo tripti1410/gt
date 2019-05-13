@@ -14,4 +14,22 @@ export const getVehicles = () => {
     .get()
     .json()
     .catch();
+};
+
+export const getToken = () => {
+  return wretch()
+    .url("https://findfalcone.herokuapp.com/token")
+    .headers({accept: 'application/json'})
+    .post()
+    .json()
+    .catch()
+};
+
+export const findfalcone = (request) => {
+  return wretch()
+    .url('https://findfalcone.herokuapp.com/find')
+    .headers({accept: 'application/json', 'content-type': 'application/json'})
+    .post(request)
+    .json()
+    .catch()
 }
